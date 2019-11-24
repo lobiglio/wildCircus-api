@@ -1,2 +1,16 @@
 # node-template
-Repository contenant plusieurs template de base pour node JS 
+This repository give you a starting point with Node JS projects for the following cases: 
+
+## Node Typescript: Run/Build/Dev/Debug
+
+The following scripts launch respectivly: 
+`run`: Run production version
+`dev`: Develop - livereload
+`debug`: Ability to debug with vscode (activate **auto attach option** ) ctrl+shift+p(_type_ "auto attach")
+`build`: convert typescript to javascript
+```json
+    "start": "npm run build && node build/index.js",
+    "start:dev": "nodemon",
+    "start:debug": "nodemon --config nodemon-debug.json",
+    "build": "rimraf ./build && tsc",
+```
