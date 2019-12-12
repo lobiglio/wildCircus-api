@@ -11,21 +11,10 @@ import express, { Router, Request, Response, Application } from 'express';
 export const SportController = (app: Application) => {
 
     const sportsRouter: Router = express.Router();
-    const sportService = SportService.getInstance();
+    const sportService = new SportService();
 
     sportsRouter.get('/', (req: Request, res: Response) => {
         res.send(sportService.getAll());
-    });
-
-    sportsRouter.get('/:id', (req: Request, res: Response) => {
-        res.send(sportService.getById(parseInt(req.params.id, 10)));
-    });
-
-    sportsRouter.post('/', (req: Request, res: Response) => {
-        const sport = req.body;
-        sportService.addSport(sport);
-        res.send(sport);
-
     });
 
     app.use('/sport', sportsRouter);

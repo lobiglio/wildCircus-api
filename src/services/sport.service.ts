@@ -6,32 +6,14 @@ import { SportRepository } from '../repository/sport.repository';
  */
 export class SportService {
 
-    // Make service => singletonTransformation de notre service en singleton
-    private static instance: SportService;
-    static getInstance() {
-        if (!this.instance) {
-            this.instance = new SportService();
-        }
-        return this.instance;
-    }
-
-    // Un singeleton est une class ayant une instance unique a travers toute l'app
     private repository: SportRepository;
-    private constructor() {
-        this.repository = SportRepository.getInstance();
+    constructor() {
+        this.repository = new SportRepository();
     }
 
     // Business logic
-
     getAll() {
         return this.repository.findAll();
     }
 
-    getById(id: number) {
-        // return this.repository.findById(id);
-    }
-
-    addSport(sport: any) {
-        // return this.repository.save(sport);
-    }
 }
