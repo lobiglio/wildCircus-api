@@ -1,4 +1,6 @@
 import { UserRepository } from '../repository/user.repository';
+import { User } from '../entity/user.entity';
+import { getCustomRepository } from 'typeorm';
 /**
  * Cette classe est un service
  * C'est ici que l'ensemble de la logique consernant les psort doit apparaitre.
@@ -6,14 +8,17 @@ import { UserRepository } from '../repository/user.repository';
  */
 export class UserService {
 
-    private repository: UserRepository;
-    constructor() {
-        this.repository = new UserRepository();
-    }
+
+    private repository = getCustomRepository(UserRepository);
 
     // Business logic
-    getAll() {
-        return this.repository.find();
+    async getAll() {
+        return await this.repository.find();
+    }
+
+    async insert(user: any) {
+        await this.repository.create(user);
+        return await this.repository.save(user);
     }
 
 }
