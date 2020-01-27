@@ -13,7 +13,7 @@ export class UserService {
 
     // Business logic
     getAll() {
-        return this.repository.findAll();
+        return this.repository.find();
     }
 
 }
