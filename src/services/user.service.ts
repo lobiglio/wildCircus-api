@@ -1,14 +1,14 @@
-import { SportRepository } from '../repository/sport.repository';
+import { UserRepository } from '../repository/user.repository';
 /**
  * Cette classe est un service
  * C'est ici que l'ensemble de la logique consernant les psort doit apparaitre.
  * Attention ! Mettez le moins possible d'element dans le controlleur
  */
-export class SportService {
+export class UserService {
 
-    private repository: SportRepository;
+    private repository: UserRepository;
     constructor() {
-        this.repository = new SportRepository();
+        this.repository = new UserRepository();
     }
 
     // Business logic
