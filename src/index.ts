@@ -1,4 +1,5 @@
 import express from 'express';
+import "reflect-metadata";
 import { SportController } from './controller/sport.controller';
 
 import loaders from './loaders';
