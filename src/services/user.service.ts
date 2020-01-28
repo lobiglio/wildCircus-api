@@ -17,7 +17,6 @@ export class UserService {
     }
 
     async insert(user: any) {
-        await this.repository.create(user);
         return await this.repository.save(user);
     }
 
