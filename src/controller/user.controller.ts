@@ -19,8 +19,8 @@ export const UserController = (app: Application) => {
 
     userRouter.post('/', async (req: Request, res: Response) => {
         const user = req.body;
-        res.send(await userService.insert(user));
-    })
+        res.send(await userService.create(user));
+    });
 
-    app.use('/user', userRouter);
+    app.use('/users', userRouter);
 };
