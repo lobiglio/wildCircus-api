@@ -16,7 +16,7 @@ export class UserService {
     }
 
     async create(user: any) {
-        user = this.repository.save(user);
+        user = this.repository.create(user);
         return await this.repository.save(user);
     }
 
