@@ -18,6 +18,6 @@ export class Artist {
     @Column({ type: 'varchar', length: 255, nullable: false })
     videoUrl!: string;
 
-    @Column({ type: 'number' })
+    @Column({ type: 'int', default: 0 })
     nbVote!: number;
 }

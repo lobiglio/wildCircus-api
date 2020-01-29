@@ -1,5 +1,6 @@
 import { createConnection } from 'typeorm';
 import { Artist } from '../entity/artist.entity';
+import { Event } from '../entity/event.entity';
 
 export default async () => {
 
@@ -12,6 +13,7 @@ export default async () => {
         database: process.env.WILDCIRCUS_DB,
         entities: [
             Artist,
+            Event,
         ],
         synchronize: true,
     });
