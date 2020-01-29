@@ -1,5 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
-import { Reservation } from './reservation.entity';
+import { Booking } from './booking.entity';
 
 @Entity('event')
 export class Event {
@@ -17,8 +17,8 @@ export class Event {
     maxSeat!: string;
 
     @OneToMany(
-        type => Reservation,
-        reservation => reservation.event,
+        type => Booking,
+        booking => booking.event,
     )
-    reservations!: Reservation[];
+    bookings!: Booking[];
 }

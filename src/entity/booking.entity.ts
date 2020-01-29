@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import { Event } from './event.entity';
 
 @Entity('booking')
 export class Booking {
@@ -12,7 +13,15 @@ export class Booking {
     @Column({ type: 'varchar', length: 25, nullable: false })
     lastName!: string;
 
-    @Column({ type: 'varchar', length: 255, nullable: false })
-    comment!: string;
+    @Column({ type: 'varchar', length: 100, nullable: false })
+    mail!: string;
 
+    @Column({ type: 'int', nullable: false })
+    nbSeat!: number;
+
+    @ManyToOne(
+        type => Event,
+        event => event.bookings,
+    )
+    event!: Event;
 }

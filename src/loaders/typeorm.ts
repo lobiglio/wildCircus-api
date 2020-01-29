@@ -1,8 +1,8 @@
 import { createConnection } from 'typeorm';
 import { Artist } from '../entity/artist.entity';
 import { Event } from '../entity/event.entity';
-import { Reservation } from '../entity/reservation.entity';
 import { Booking } from '../entity/booking.entity';
+import { Book } from '../entity/book.entity';
 import { Petition } from '../entity/petition.entity';
 
 export default async () => {
@@ -17,8 +17,8 @@ export default async () => {
         entities: [
             Artist,
             Event,
-            Reservation,
             Booking,
+            Book,
             Petition,
         ],
         synchronize: true,
