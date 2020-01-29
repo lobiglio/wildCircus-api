@@ -1,3 +1,5 @@
+import { BookingController } from './controller/booking.controller';
+import { BookController } from './controller/book.controller';
 import { ArtistController } from './controller/artist.controller';
 import 'reflect-metadata';
 
@@ -15,6 +17,8 @@ async function startServer() {
 
   // Ajout des différentes route de votre application
   ArtistController(app);
+  BookController(app);
+  BookingController(app);
 
   // Démarrage du serveur une fois que tout est correctement init
   app.listen(3000, () => console.log('Express server is running'));
