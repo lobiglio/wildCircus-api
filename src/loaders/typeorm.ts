@@ -1,5 +1,5 @@
 import { createConnection } from 'typeorm';
-import { User } from '../entity/user.entity';
+import { Artist } from '../entity/artist.entity';
 
 export default async () => {
 
@@ -11,7 +11,7 @@ export default async () => {
         password: process.env.MYSQL_PASSWORD,
         database: process.env.WILDCIRCUS_DB,
         entities: [
-            User,
+            Artist,
         ],
         synchronize: true,
     });
