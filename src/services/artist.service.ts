@@ -4,4 +4,8 @@ import { AbstractService } from '../core/abstract.service';
 
 export class ArtistService extends AbstractService {
     protected repository = getCustomRepository(ArtistRepository);
+
+    getByNbVote() {
+        return this.repository.find({ order: { nbVote: 'DESC' } });
+    }
 }
